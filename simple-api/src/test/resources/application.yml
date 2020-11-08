@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 spring:
   jpa:
     properties:
@@ -10,4 +11,18 @@ spring:
     driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
     url: jdbc:tc:postgresql://hostname/simple-api
     username: ${embedded.postgresql.user}
+=======
+spring:
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+    generate-ddl: false
+  datasource:
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+    url: jdbc:tc:postgresql://hostname/simple-api
+    username: ${embedded.postgresql.user}
+>>>>>>> d4dc0d2... Add files via upload
     password: ${embedded.postgresql.password}
