@@ -1,3 +1,20 @@
 language: java
 script:
 	- mvn clean verify --file ./simple-api
+	# Connexion à Docker
+	- docker login -u $docker_login -p ùdocker_pwd
+	# Build
+	- docker build -t $docker_login/mydb ./database
+	- docker build -t $docker_login/myhttpd ./httpd
+	- docker build -t $docker_login/myapi ./simple-api
+	# Publication des images
+	- docker push $docker_login/mydb
+	- docker push $docker_login/myhttpd
+	- docker push $docker_login/myapi
+cache : 
+	directories :
+		- $HOME/.m2
+services :
+	- docker
+on :
+	branch:develop
