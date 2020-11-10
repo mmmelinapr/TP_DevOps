@@ -1,0 +1,9 @@
+- name: Launch proxy
+  docker_container:
+    name: reverse_proxy
+    image: mmmelinapr/TP-Travis:httpd
+    state: started
+    networks:
+      - name: app-network
+    ports:
+      - "80:80"

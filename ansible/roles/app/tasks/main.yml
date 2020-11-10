@@ -1,0 +1,11 @@
+- name: Launch app
+  docker_container:
+    name: backend
+    image: mmmelinapr/TP-Travis:simple-api
+    state: started
+    networks:
+      - name: app-network
+    env:
+      SPRING_DATASOURCE_PASSWORD: "{{ db_password }}"
+      SPRING_DATASOURCE_USER: "{{ db_user }}"
+      SPRING_DATASOURCE_URL: jdbc:postgresql://database:5432/db

@@ -1,0 +1,11 @@
+- name: Launch database
+  docker_container:
+    name: database
+    image: mmmelinapr/TP-Travis:database
+    state: started
+    networks:
+      - name: app-network
+    env:
+      POSTGRES_PASSWORD: "{{ db_password }}"
+      POSTGRES_USER: "{{ db_user }}"
+      POSTGRES_DB: db
