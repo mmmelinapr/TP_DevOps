@@ -35,4 +35,14 @@ spring:
     username: usr
     password: pwd
     driver-class-name: org.postgresql.Driver
+<<<<<<< HEAD
 >>>>>>> d4dc0d2... Add files via upload
+=======
+management:
+server:
+add-application-context-header: false
+endpoints:
+web:
+exposure:
+include: health,info,env,metrics,beans,configprops
+>>>>>>> e7c348e... fin du tp3
